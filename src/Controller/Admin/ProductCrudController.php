@@ -59,6 +59,7 @@ class ProductCrudController extends AbstractCrudController
             BooleanField::new('active'),
 
             AssociationField::new('category')->setQueryBuilder(function (QueryBuilder $queryBuilder) {
+                //dd($queryBuilder->getDQL())
                 $queryBuilder->where('entity.active = true');
             }),
 
@@ -67,23 +68,23 @@ class ProductCrudController extends AbstractCrudController
         ];
     }
 
-    public function persistEntity(EntityManagerInterface $em, $entityInstance): void
-    {
-        if (!$entityInstance instanceof Product) return;
+    // public function persistEntity(EntityManagerInterface $em, $entityInstance): void
+    // {
+    //     if (!$entityInstance instanceof Product) return;
 
-        $entityInstance->setCreatedAt(new \DateTimeImmutable);
+    //     $entityInstance->setCreatedAt(new \DateTimeImmutable);
 
-        parent::persistEntity($em, $entityInstance);
-    }
+    //     parent::persistEntity($em, $entityInstance);
+    // }
 
-    public function updateEntity(EntityManagerInterface $em, $entityInstance): void
-    {
-        if (!$entityInstance instanceof Product) return;
+    // public function updateEntity(EntityManagerInterface $em, $entityInstance): void
+    // {
+    //     if (!$entityInstance instanceof Product) return;
 
-        $entityInstance->setUpdatedAt(new \DateTimeImmutable);
+    //     $entityInstance->setUpdatedAt(new \DateTimeImmutable);
 
-        parent::updateEntity($em, $entityInstance);
-    }
+    //     parent::updateEntity($em, $entityInstance);
+    // }
 
     public function duplicateProduct(
         AdminContext $context,
