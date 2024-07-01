@@ -111,7 +111,7 @@ class Product
 
     public function setUpdatedAt(?\DateTimeImmutable $updatedAt): static
     {
-        $this->updateAt = $updatedAt;
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }
@@ -123,7 +123,7 @@ class Product
 
     public function setCreatedAt(\DateTimeImmutable $createdAt): static
     {
-        $this->creatAt = $createdAt;
+        $this->createdAt = $createdAt;
 
         return $this;
     }

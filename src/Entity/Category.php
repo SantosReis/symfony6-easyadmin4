@@ -74,7 +74,7 @@ class Category
 
     public function setUpdatedAt(?\DateTimeImmutable $updatedAt): static
     {
-        $this->updateAt = $updatedAt;
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }
@@ -86,7 +86,7 @@ class Category
 
     public function setCreatedAt(\DateTimeImmutable $createdAt): static
     {
-        $this->creatAt = $createdAt;
+        $this->createdAt = $createdAt;
 
         return $this;
     }
